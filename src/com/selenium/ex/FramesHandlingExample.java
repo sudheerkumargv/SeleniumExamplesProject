@@ -11,7 +11,7 @@ public class FramesHandlingExample {
 	public static void main(String[] args) {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("G:\\Selenium\\SeleniumExamples\\Frames\\Frames.html");
+		driver.get(System.getProperty("user.dir")+"\\html\\Frames\\Frames.html");
 		
 		/*
 		 * Frame can be identified by index,name,id,as WebElement
@@ -39,6 +39,9 @@ public class FramesHandlingExample {
 		driver.switchTo().frame(0);
 		WebElement lastNameElement = driver.findElement(By.name("lname1"));
 		lastNameElement.sendKeys("In LastName");
+		
+		//closing the browser
+		driver.quit();
 		
 	}
 }

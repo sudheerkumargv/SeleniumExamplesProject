@@ -14,7 +14,7 @@ public class AlertPopupExample
 	{
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("G:\\Selenium\\SeleniumExamples\\APM.html");
+		driver.get(System.getProperty("user.dir")+"\\html\\APM.html");
 		
 		WebElement confirmBtn = driver.findElement(By.id("btnConfirm"));
 		confirmBtn.click();
