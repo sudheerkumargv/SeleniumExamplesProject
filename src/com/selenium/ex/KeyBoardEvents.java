@@ -55,7 +55,6 @@ public class KeyBoardEvents {
 	public static void dragNDrop(WebDriver driver)
 	{
 	    driver.get("http://jqueryui.com/demos/droppable/");
-
         WebElement draggable = driver.findElement(By.id("draggable"));
         WebElement droppable = driver.findElement(By.id("droppable"));
         new Actions(driver).dragAndDrop(draggable, droppable).perform();
