@@ -27,4 +27,12 @@ public class RemoteWebDriverExample {
 		remoteDriver.close();
 		
 	}
+	
+	/*
+	 * In case of running on chrome
+	 * Set the capability as, capabilities.setBrowserName("chrome");
+	 * run the following command to start seleinium server on remote
+	 * >java -jar sel-standalone.jar -Dwebdriver.chrome.driver="c/chromedriver.exe"
+	 * 
+	 */
 }
