@@ -15,15 +15,16 @@ public class RemoteWebDriverExample {
 		RemoteWebDriver remoteDriver = null;
 		try {
 			remoteDriver = new RemoteWebDriver(new URL(
-					"http://127.0.0.1:4444/wd/hub"), capabilities);
+					"http://192.168.0.100:4444/wd/hub"), capabilities);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 		remoteDriver.get("http://www.mortgagecalculator.org/");
+		Thread.sleep(5*1000);
 		WebElement homeValueElement = remoteDriver.findElement(By.name("param[homevalue]"));
 		homeValueElement.clear();
 		homeValueElement.sendKeys("10000");
-		Thread.sleep(5*1000);
 		remoteDriver.close();
+		
 	}
 }
