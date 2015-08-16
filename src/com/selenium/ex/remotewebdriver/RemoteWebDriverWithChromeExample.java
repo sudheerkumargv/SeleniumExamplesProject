@@ -1,4 +1,4 @@
-package com.selenium.ex;
+package com.selenium.ex.remotewebdriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -10,10 +10,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class RemoteWebDriverExample {
+public class RemoteWebDriverWithChromeExample {
 	public static void main(String[] args) throws InterruptedException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setBrowserName("firefox");
+		capabilities.setBrowserName("chrome");
 		RemoteWebDriver driver = null;
 		try {
 			driver = new RemoteWebDriver(new URL(
@@ -28,26 +28,32 @@ public class RemoteWebDriverExample {
 		WebElement homeValueElement = driver.findElement(By.name("param[homevalue]"));  //element finding
 		homeValueElement.clear();
 		homeValueElement.sendKeys("10000");
+		Thread.sleep(5*1000);//this wait is added to see the script executing
 		//Enter LoanAmout
 		WebElement loanAmtElement = driver.findElement(By.id("loanamt"));
 		loanAmtElement.clear();
 		loanAmtElement.sendKeys("5000");
+		Thread.sleep(5*1000);
 		//Enter IntrestRate
 		WebElement intrElement = driver.findElement(By.id("intrstsrate"));
 		intrElement.clear();
 		intrElement.sendKeys("5");
+		Thread.sleep(5*1000);
 		//Enter LoanTerm
 		WebElement loanTermElement = driver.findElement(By.id("loanterm"));
 		loanTermElement.clear();
 		loanTermElement.sendKeys("10");
+		Thread.sleep(5*1000);
 		//Enter PropertyTax
 		WebElement propertyElement = driver.findElement(By.id("pptytax"));
 		propertyElement.clear();
 		propertyElement.sendKeys("1");
+		Thread.sleep(5*1000);
 		//Enter PMI
 		WebElement pmiElement = driver.findElement(By.id("pmi"));
 		pmiElement.clear();
 		pmiElement.sendKeys("0.25");
+		Thread.sleep(5*1000);
 		//SelectStartDate Month
 		WebElement monthElement = driver.findElement(By.name("param[start_month]"));
 		Select month = new Select(monthElement);
@@ -58,6 +64,7 @@ public class RemoteWebDriverExample {
 		year.selectByVisibleText("2016");
 		//Click on Caluclate Button
 		WebElement calBtn = driver.findElement(By.name("cal"));
+		//Thread.sleep(5*1000);
 		calBtn.click();
 		driver.quit();
 		
