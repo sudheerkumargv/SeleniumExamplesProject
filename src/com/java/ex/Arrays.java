@@ -26,8 +26,13 @@ public class Arrays
 //		System.out.println(b[1].length);
 		
 		
-
-		
+		int b[][] = new int[2][2];
+		b[0][0] = 1;
+		b[0][1] = 1;
+		b[1][0] = 1;
+		b[1][1] = 1;
+		b[1][2] = 1;
+		b[1][3] = 1;
 		System.out.println(b.length);
 		System.out.println(b[0].length);
 		System.out.println(b[1].length);
