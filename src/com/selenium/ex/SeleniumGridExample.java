@@ -1,4 +1,4 @@
-package com.selenium.demo;
+package com.selenium.ex;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,21 +11,23 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SeleniumGridExample
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException
 	{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setPlatform(Platform.WINDOWS);
+		capabilities.setPlatform(Platform.WIN8_1);
 		capabilities.setBrowserName("firefox");
 		RemoteWebDriver remoteWD = null;
+		Thread.sleep(10*1000);
 		try {
-			remoteWD = new RemoteWebDriver(new URL("http://192.168.0.101:4444//wd/hub"), capabilities);
+			remoteWD = new RemoteWebDriver(new URL("http://192.168.0.100:2222//wd/hub"), capabilities);
 		} catch (MalformedURLException e)
 		{
 			e.printStackTrace();
 		}
 		remoteWD.get("http://www.google.com");
 		WebElement element = remoteWD.findElement(By.name("q"));
-		element.sendKeys("Packt Publishing");
+		Thread.sleep(3*1000);
+		element.sendKeys("Selenium APIs");
 		remoteWD.quit();
 	}
 

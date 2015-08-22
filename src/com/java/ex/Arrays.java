@@ -26,7 +26,7 @@ public class Arrays
 //		System.out.println(b[1].length);
 		
 		
-		int b[][] = new int[2][2];
+		int b[][] = new int[2][];
 		b[0][0] = 1;
 		b[0][1] = 1;
 		b[1][0] = 1;
@@ -42,7 +42,7 @@ public class Arrays
 		            {"Smith", "Jones"}
 		        };
 		 System.out.println(names[0][0] + names[1][0]);
-        System.out.println(names[0][2] + names[1][1]);
+	        System.out.println(names[0][2] + names[1][1]);
 		
 	}
 }

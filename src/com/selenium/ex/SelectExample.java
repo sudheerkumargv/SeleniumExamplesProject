@@ -11,31 +11,42 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SelectExample 
 {
-	public static void main(String[] args)
+	public static void main(String[] args)throws Exception
 	{
 		WebDriver driver = new FirefoxDriver();
-		driver.get("http://www.mortgagecalculator.org/"); //Open URL in FireFox
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.name("param[start_month]"));
+	    driver.get(System.getProperty("user.dir")+"\\html\\Select.html"); //Open URL in FireFox
+	    Thread.sleep(2*1000);
+		WebElement element = driver.findElement(By.name("cars")); //find the select element
 		Select select = new Select(element);
-		select.selectByIndex(1);
-		select.selectByValue("4");
-		select.selectByVisibleText("Jun"); //select the text if its visible
+		select.selectByIndex(0); //select by index
+		Thread.sleep(2*1000);
+		select.selectByValue("opelcar"); //select by value
+		Thread.sleep(2*1000);
+		select.selectByVisibleText("BMW"); //select by text
+		
+		//Get First Selected or Currently Selected option
 		WebElement firstValue = select.getFirstSelectedOption(); //gives the current selected option
-		System.out.println(firstValue.getText());
+		System.out.println("First Selected Option:"+firstValue.getText());
+		
+		//Get all the selected options 
+		List<WebElement> allSelectedOptions = select.getAllSelectedOptions();
+		for (WebElement webElement : allSelectedOptions)
+		{
+			System.out.println("Selected Option:"+webElement.getText());
+		}
+
+		//Get all the options present in the Select element
 		List<WebElement> options = select.getOptions();//returns all the options from the list
-		for (WebElement webElement : options) {
-			System.out.println(webElement.getText());
+		for (WebElement webElement : options)
+		{
+			System.out.println("options:"+webElement.getText());
 		}
-		List<WebElement> allSelectedOptions = select.getAllSelectedOptions();//returns all the options from the list
-		for (WebElement webElement : allSelectedOptions) {
-			System.out.println(webElement.getText());
-		}
-		select.deselectByIndex(1);
-		select.deselectByValue("Apr");
-		select.deselectByVisibleText("Jun");
 		
-		
-		
+		select.deselectByIndex(0);
+		Thread.sleep(2*1000);
+		select.deselectByValue("bmwcar");
+		Thread.sleep(2*1000);
+		select.deselectByVisibleText("Opel");
 	}
 }

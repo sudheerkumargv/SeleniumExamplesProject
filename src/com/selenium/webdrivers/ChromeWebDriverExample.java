@@ -15,7 +15,8 @@ public class ChromeWebDriverExample
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://www.google.com");
-		driver.findElement(By.id("lst-ib")).sendKeys("sudheer tech");
+		WebElement element = driver.findElement(By.id("lst-ib"));
+		element.sendKeys("sudheer tech");
 		driver.quit();
 	}
 }
