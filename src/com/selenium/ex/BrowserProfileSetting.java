@@ -7,14 +7,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.Test;
 
-public class ProfileSettingsHome {
+public class BrowserProfileSetting {
 
 	WebDriver driver;
 
 	@Test
 	public void testExamples() {
 		FirefoxProfile profile = new FirefoxProfile();
-		profile.setPreference("browser.startup.homepage", "http://www.bing.com");
+		profile.setPreference("browser.startup.homepage", "http://www.google.com");
 		driver = new FirefoxDriver();
 
 		WebElement element = driver.findElement(By.name("q"));
