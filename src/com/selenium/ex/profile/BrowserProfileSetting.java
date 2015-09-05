@@ -1,4 +1,4 @@
-package com.selenium.ex;
+package com.selenium.ex.profile;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,9 +21,10 @@ public class BrowserProfileSetting {
 		element.sendKeys("100");
 	}
 }
-
 /**
-*
-*Pending FireFox browser installed with FireBug
-*/
+ * type 'about:config' in the opened browser
+ * and verify the key which is set with the google page
+ */
+
+
 
