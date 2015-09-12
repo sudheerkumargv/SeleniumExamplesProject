@@ -10,16 +10,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
-public class FireFoxProfileWithPlugingsInstalled {
-	public static void main(String[] args) throws IOException {
+public class FireFoxProfileWithPlugingsInstalled 
+{
+	public static void main(String[] args) throws IOException 
+	{
 		FirefoxProfile profile = new FirefoxProfile();
-		File file = new File(System.getProperty("user.dir")+"\\resources\\addons\\addon-1.2.7.1-fx.xpi");
+		File file = new File("G:\\firebug-2.0.12-fx.xpi");
 		profile.addExtension(file);
 		WebDriver driver = new FirefoxDriver(profile);
 
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.get("http://www.google.com");
 		WebElement element = driver.findElement(By.name("q"));
-		element.sendKeys("100");
+		element.sendKeys("Sudheer Tech");
 	}
 }

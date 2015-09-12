@@ -21,3 +21,7 @@ public class ReadExistingBrowserProfile {
 		element.sendKeys("100");
 	}
 }
+
+/**
+ * Create a profile which is required by you and use the same
+ */
