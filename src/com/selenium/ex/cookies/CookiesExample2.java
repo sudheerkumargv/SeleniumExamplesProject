@@ -1,4 +1,4 @@
-package com.selenium.ex;
+package com.selenium.ex.cookies;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.selenium.ex.Utils;
 
 public class CookiesExample2
 {

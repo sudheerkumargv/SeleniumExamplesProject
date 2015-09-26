@@ -1,4 +1,4 @@
-package com.selenium.ex;
+package com.selenium.ex.cookies;
 
 import java.io.BufferedReader;
 import java.io.File;
