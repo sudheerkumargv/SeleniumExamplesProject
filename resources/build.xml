@@ -1,0 +1,47 @@
+<project name="Testng Ant build" basedir="." default="testng-execution" >
+	<!-- Sets the property variables to point to respective directories -->
+	<property name="report-dir" value="${basedir}/html-report" />
+	<property name="testng-report-dir" value="${report-dir}/TestNG-report" />
+	<property name="bin-dir" value="${basedir}/bin-dir" />
+	<property name="src-dir" value="${basedir}/src" />
+	<property name="selenium.home.dir" value="G:/Selenium/SeleniumJars/selenium-java-2.46.0/selenium-2.46.0" />
+	<property name="selenium.lib.dir" value="${selenium.home.dir}/libs" />
+	
+	<!-- Sets the classpath including the bin directory and all the jars underthe lib folder -->
+	<path id="test.classpath">
+		<pathelement location="${bin-dir}" />
+		<fileset dir="${selenium.home.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${selenium.lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Deletes and recreate the bin and report directory -->
+	<target name="init">
+		<delete dir="${bin-dir}" />
+		<mkdir dir="${bin-dir}" />
+		<delete dir="${report-dir}" />
+		<mkdir dir="${report-dir}" />
+	</target>
+
+	<!-- Compiles the source code present under the "src-dir" and place classfiles under bin-dir -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src-dir}" classpathref="test.classpath"
+      includeAntRuntime="No" destdir="${bin-dir}" />
+	</target>
+
+	<!-- Defines a TestNG task with name "testng" -->
+	<taskdef name="testng" classname="org.testng.TestNGAntTask"
+    classpathref="test.classpath" />
+
+	<!-- Executes the testng tests configured in the testng.xml file -->
+	<target name="testng-execution" depends="compile">
+		<mkdir dir="${testng-report-dir}" />
+		<testng outputdir="${testng-report-dir}" classpathref="test.classpath" useDefaultListeners="true">
+			<!-- Configures the testng xml file to use as test-suite -->
+			<xmlfileset dir="${basedir}" includes="testng.xml" />
+		</testng>
+	</target>
+</project>

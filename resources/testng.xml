@@ -1,0 +1,8 @@
+<suite name="Suite1" verbose="1" >
+  <test name="test1" >
+    <classes>
+       <class name="org.mgc.tests.MGCTest" /> 
+       <class name="org.mgc.tests.LACTest" />
+    </classes>
+  </test>
+ </suite>
