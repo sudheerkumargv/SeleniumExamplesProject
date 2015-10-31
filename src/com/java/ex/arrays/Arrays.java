@@ -1,4 +1,4 @@
-package com.java.ex;
+package com.java.ex.arrays;
 
 public class Arrays 
 {

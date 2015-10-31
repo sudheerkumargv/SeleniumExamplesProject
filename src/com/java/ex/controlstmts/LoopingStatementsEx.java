@@ -1,4 +1,4 @@
-package com.java.ex.loopingstatements;
+package com.java.ex.controlstmts;
 
 public class LoopingStatementsEx {
 	public static void main(String[] args) {

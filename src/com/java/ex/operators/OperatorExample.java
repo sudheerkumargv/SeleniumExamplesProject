@@ -1,4 +1,4 @@
-package com.java.ex;
+package com.java.ex.operators;
 
 public class OperatorExample {
 	public static void main(String[] args) {
