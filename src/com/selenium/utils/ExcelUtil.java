@@ -1,4 +1,4 @@
-package org.mgc.util;
+package com.selenium.utils;
 
 import java.io.File;
 import java.io.IOException;

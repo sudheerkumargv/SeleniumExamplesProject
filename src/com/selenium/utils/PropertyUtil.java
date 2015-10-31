@@ -1,4 +1,4 @@
-package com.inventateq.utils;
+package com.selenium.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;

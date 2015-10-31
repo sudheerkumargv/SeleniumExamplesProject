@@ -1,4 +1,4 @@
-package java.ex.constructors;
+package com.java.ex.constructors;
 
 public class Dog {
 
